@@ -12,6 +12,11 @@ public class PlayerMovement : MonoBehaviour
     public bool isMoving;
     public bool isCarrying;
 
+    private void Start()
+    {
+        CollectableManager.instance.carryingSomethingAction += StartCarrying;
+        CollectableManager.instance.stoppedcarryingAction += StopCarrying;
+    }
 
     private void Update()
     {
@@ -47,4 +52,15 @@ public class PlayerMovement : MonoBehaviour
         }
         
     }
+
+    public void StartCarrying()
+    {
+        myAnimator.SetBool("carrying", true);
+    }
+
+    public void StopCarrying()
+    {
+        myAnimator.SetBool("carrying", false);
+    }
+
 }

@@ -8,6 +8,9 @@ TagManager:
   - room left
   - customer
   - Reception area
+  - cash
+  - collectable item
+  - drop zone
   layers:
   - Default
   - TransparentFX
@@ -17,7 +20,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - customer
   - 
   - 
   - 

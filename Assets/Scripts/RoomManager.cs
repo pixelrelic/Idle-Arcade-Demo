@@ -8,7 +8,7 @@ public class RoomManager : MonoBehaviour
     public static RoomManager instance;
     [SerializeField] Room[] rooms;
     public event Action someRoomGotVacant;
-
+    public GameObject hotelExit;
     private void Awake()
     {
         instance = this;

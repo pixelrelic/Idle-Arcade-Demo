@@ -57,7 +57,7 @@ public class CustomerQueueManager : MonoBehaviour
 
     public void RemoveFirstCustomer()
     {
-        
+        RoomManager.instance.BookRoom(customers[0]);
         isQueueReady = false;
         GameObject tempGO = Instantiate(customerGameobject, personSpawnPosition.transform.position, personSpawnPosition.transform.rotation, queueParent.transform);
         Customer tempCustomer = tempGO.GetComponent<Customer>();
@@ -73,7 +73,7 @@ public class CustomerQueueManager : MonoBehaviour
                 currentCustomer.transform.DOMove(customers[i - 1].transform.position, 0.5f).OnComplete(()=> {
                     
                     //book room for first customer
-                    RoomManager.instance.BookRoom(customers[0]);
+                    //RoomManager.instance.BookRoom(customers[0]);
                     customers.RemoveAt(0);
                     newCustomerHasComeAction?.Invoke();
                     isQueueReady = true;
